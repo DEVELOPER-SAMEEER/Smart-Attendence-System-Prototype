@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.gpaurai.com</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: rgb(23, 23, 23);
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #111111;
+        }
+        th, td {
+            border: 2px groove #bab8bae8;
+            padding: 10px;
+            text-align: left;
+            color: white;
+            font-weight: 600;
+        }
+        th {
+            background-color: #737272;
+
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Attendence Dashboard</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="results">
+            <!--Show Fetched data-->
+        </tbody>
+    </table>
+
+<script>
+    window.onload = function() {
+        fetch('http://localhost:3000/attendance', {
+            method: 'GET',
+            headers: { 'Content-type': 'application/json' }
+        })
+        .then(res => res.json())
+        .then(data => {
+            displayData(data);
+        })
+        .catch(error => console.error('Error:', error));
+    };
+
+    function displayData(data) {
+        const resultsBody = document.getElementById('results');
+        resultsBody.innerHTML = '';
+        data.forEach(student => {
+            resultsBody.innerHTML += `
+                <tr>
+                    <td>${student.name}</td>
+                    <td>${student.date}</td>
+                    <td>${student.time}</td>
+                    <td>${student.status}</td>
+                </tr>
+            `;
+        });
+    }
+</script>
+
+</body>
+</html>

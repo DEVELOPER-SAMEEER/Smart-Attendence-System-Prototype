@@ -1,0 +1,8 @@
+cmake
+opencv-contrib-python
+numpy
+face-recognition
+face-recognition-models
+setuptools==69.5.1
+requests==2.31.0
+

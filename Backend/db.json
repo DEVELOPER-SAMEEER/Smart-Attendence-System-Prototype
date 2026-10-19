@@ -1,0 +1,33 @@
+{
+  "attendance": [
+    {
+      "name": "Rohan",
+      "date": "2026-09-18",
+      "time": "14:08:35",
+      "status": "Present",
+      "id": "NEn2AF_pZKo"
+    },
+    {
+      "name": "Digvijay Singh Yadav",
+      "date": "2026-09-18",
+      "time": "14:08:42",
+      "status": "Present",
+      "id": "Uw1ZvLVf5bs"
+    },
+    {
+      "name": "Shivam Yadav",
+      "date": "2026-09-19",
+      "time": "10:28:58",
+      "status": "Present",
+      "id": "HFxnvWUkesM"
+    },
+    {
+      "name": "Unknown",
+      "date": "2026-09-19",
+      "time": "10:29:22",
+      "status": "Present",
+      "id": "xObnp6eagXQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
